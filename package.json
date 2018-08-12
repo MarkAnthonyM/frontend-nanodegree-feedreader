@@ -1,0 +1,22 @@
+{
+  "name": "feedreader",
+  "version": "1.0.0",
+  "description": "udacity feed reader project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[Dreader project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkAnthonyM/frontend-nanodegree-feedreader.git"
+  },
+  "author": "Mark Anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkAnthonyM/frontend-nanodegree-feedreader/issues"
+  },
+  "homepage": "https://github.com/MarkAnthonyM/frontend-nanodegree-feedreader#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
