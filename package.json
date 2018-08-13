@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MarkAnthonyM/frontend-nanodegree-feedreader#readme",
   "devDependencies": {
+    "eslint": "^5.3.0",
     "gulp": "^4.0.0"
   }
 }
