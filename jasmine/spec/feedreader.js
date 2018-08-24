@@ -54,7 +54,8 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-
+        const bodyTag = document.querySelector('body');
+        const hamburger = document.querySelector('.menu-icon-link');
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -62,7 +63,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('hidden menu default', function() {
-           expect(document.querySelector('body').getAttribute('class')).toBe('menu-hidden');
+           expect(bodyTag.getAttribute('class')).toBe('menu-hidden');
          });
 
          /* TODO: Write a test that ensures the menu changes
@@ -70,6 +71,12 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('changes when clicked', function() {
+            hamburger.click();
+            expect(bodyTag.getAttribute('class')).toBe('');
+            hamburger.click();
+            expect(bodyTag.getAttribute('class')).toBe('menu-hidden');
+          });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
