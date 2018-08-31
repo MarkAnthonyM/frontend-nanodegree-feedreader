@@ -102,11 +102,25 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
+        let headTitle = document.querySelector('.header-title');
+        let titleContainer = [];
+
+        beforeEach(function(done) {
+          loadFeed(0);
+          titleContainer.push(headTitle.innerText);
+          loadFeed(1, done);
+        });
 
           /* TODO: Write a test that ensures when a new feed is loaded
           * by the loadFeed function that the content actually changes.
           * Remember, loadFeed() is asynchronous.
           */
+          it('loads new feeds', function() {
+            console.log(titleContainer[0]);
+            console.log(headTitle.innerText);
+            console.log(titleContainer[0] === headTitle.innerText);
+            expect(titleContainer[0] === headTitle.innerText).toBe(false);
+          });
 
     });
 }());
