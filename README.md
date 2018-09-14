@@ -12,4 +12,4 @@ If you wish to view the source code for the test suites, navigate to [jasmine](h
 You can also view a live version of the application hosted here on github by clicking on this link: https://markanthonym.github.io/frontend-nanodegree-feedreader/
 
 ## dependacies
-[Jasmine](https://www.npmjs.com/package/jasmine) Plugin module
+- [Jasmine](https://www.npmjs.com/package/jasmine) Plugin module
