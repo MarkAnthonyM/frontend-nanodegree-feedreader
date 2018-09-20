@@ -27,11 +27,8 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+        //this test loops through the allFeeds object and ensures it has
+        //a url defined and is not empty
          it('has url', function() {
            allFeeds.forEach(function(element) {
              expect(element.url).toBeDefined();
@@ -100,26 +97,39 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        let headTitle = document.querySelector('.header-title');
-        let titleContainer = [];
+        let contentContainer;
+        let firstLoadFeed = [];
+        let secondLoadFeed = [];
+
+        beforeEach(function(done) {
+          loadFeed(0, function() {
+            contentContainer = document.querySelectorAll('.feed .entry');
+            for (const content of contentContainer) {
+              firstLoadFeed.push(content.innerText);
+            }
+            loadFeed(1, function() {
+              contentContainer = document.querySelectorAll('.feed .entry');
+              for (const content of contentContainer) {
+                secondLoadFeed.push(content.innerText);
+              }
+              done();
+            })
+          })
+        });
+
+        /*TODO: figure out why this asynchronous implimentation
+        * does not work as written:
 
         beforeEach(function(done) {
           loadFeed(0);
           titleContainer.push(headTitle.innerText);
           loadFeed(1, done);
         });
+        */
 
-          /* TODO: Write a test that ensures when a new feed is loaded
-          * by the loadFeed function that the content actually changes.
-          * Remember, loadFeed() is asynchronous.
-          */
           it('loads new feeds', function() {
-            console.log(titleContainer[0]);
-            console.log(headTitle.innerText);
-            console.log(titleContainer[0] === headTitle.innerText);
-            expect(titleContainer[0] === headTitle.innerText).toBe(false);
+            expect(firstLoadFeed).not.toEqual(secondLoadFeed);
           });
 
     });
