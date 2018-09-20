@@ -74,15 +74,14 @@ $(function() {
           */
           it('changes when clicked', function() {
             hamburger.click();
-            expect(bodyTag.getAttribute('class')).toContain('');
+            expect(bodyTag.classList.contains('menu-hidden')).toBe(false);
             hamburger.click();
-            expect(bodyTag.getAttribute('class')).toContain('menu-hidden');
+            expect(bodyTag.classList.contains('menu-hidden')).toBe(true);
           });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
-        const feedElement = document.querySelector('.feed');
 
         beforeEach(function(done) {
           loadFeed(0, done);
@@ -95,8 +94,8 @@ $(function() {
           * the use of Jasmine's beforeEach and asynchronous done() function.
           */
           it('contains entries', function() {
-            const entryContainer = feedElement.querySelectorAll('.entry');
-            expect(entryContainer.length).not.toBe(0);
+            const feedElement = document.querySelector('.feed .entry');
+            expect(feedElement).toBeDefined();
           });
     });
 
