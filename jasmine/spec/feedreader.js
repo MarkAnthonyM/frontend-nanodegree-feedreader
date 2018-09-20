@@ -64,7 +64,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('hidden menu default', function() {
-           expect(bodyTag.getAttribute('class')).toBe('menu-hidden');
+           expect(bodyTag.getAttribute('class')).toContain('menu-hidden');
          });
 
          /* TODO: Write a test that ensures the menu changes
@@ -74,9 +74,9 @@ $(function() {
           */
           it('changes when clicked', function() {
             hamburger.click();
-            expect(bodyTag.getAttribute('class')).toBe('');
+            expect(bodyTag.getAttribute('class')).toContain('');
             hamburger.click();
-            expect(bodyTag.getAttribute('class')).toBe('menu-hidden');
+            expect(bodyTag.getAttribute('class')).toContain('menu-hidden');
           });
     });
 
